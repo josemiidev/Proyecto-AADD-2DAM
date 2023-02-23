@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.gson.GsonBuilder
 import dev.josemii.proyectoaadd2damretrofit.Clases.Sucursal
 import dev.josemii.proyectoaadd2damretrofit.R
@@ -42,6 +43,29 @@ class SucursalViewFragment : Fragment() {
 
         id?.let {
             llamarAPI(it)
+            binding.btnEliminar.text = "Eliminar"
+            binding.btnGuardar.text = "Modificar"
+        }?:{
+            binding.btnEliminar.text = "Cancelar"
+            binding.btnGuardar.text = "Añadir"
+        }
+        binding.btnGuardar.setOnClickListener {
+            if(binding.btnGuardar.text.equals("Modificar")){
+                var sucursal = Sucursal(Integer.parseInt(binding.etID.text.toString()),binding.etPoblacion.text.toString(),binding.etProvincia.text.toString(),binding.etReferencia.text.toString())
+                var id = Integer.parseInt(binding.etID.text.toString())
+                editar(id,sucursal)
+            }else{
+                var sucursal = Sucursal(0,binding.etPoblacion.text.toString(),binding.etProvincia.text.toString(),binding.etReferencia.text.toString())
+                guardar(sucursal)
+            }
+        }
+        binding.btnEliminar.setOnClickListener {
+            if(binding.btnEliminar.text.equals("Eliminar")){
+                var id = Integer.parseInt(binding.etID.text.toString())
+                eliminar(id)
+            }else{
+                findNavController()?.navigate(R.id.nav_sucursales)
+            }
         }
     }
 
@@ -54,8 +78,8 @@ class SucursalViewFragment : Fragment() {
             ))
             .build()
     }
-    private fun showError(){
-        Toast.makeText(context,"Error de carga", Toast.LENGTH_LONG).show()
+    private fun showMessage(texto:String){
+        Toast.makeText(context,texto, Toast.LENGTH_LONG).show()
     }
     fun llamarAPI(id:Int){
         CoroutineScope(Dispatchers.IO).launch {
@@ -69,7 +93,56 @@ class SucursalViewFragment : Fragment() {
                     binding.etProvincia.text = Editable.Factory.getInstance().newEditable(su?.provincia)
                     binding.etReferencia.text = Editable.Factory.getInstance().newEditable(su?.referencia)
                 }else{
-                    showError()
+                    showMessage("Error al Cargar")
+                }
+            }
+        }
+    }
+
+    fun guardar(sucursal:Sucursal){
+        CoroutineScope(Dispatchers.IO).launch {
+            val call: Response<Sucursal> = getRetrofit().create(APIServiceSucursal::class.java).createSucursal(sucursal)
+            activity?.runOnUiThread{
+                if(call.isSuccessful){
+                    showMessage("Sucursal añadida")
+                    binding.etID.text = ""
+                    binding.etPoblacion.text.clear()
+                    binding.etProvincia.text.clear()
+                    binding.etReferencia.text.clear()
+                }else{
+                    showMessage("Error al Insertar")
+                }
+            }
+        }
+    }
+    fun editar(id:Int,sucursal:Sucursal){
+        CoroutineScope(Dispatchers.IO).launch {
+            val call: Response<Sucursal> = getRetrofit().create(APIServiceSucursal::class.java).updateSucursal(id,sucursal)
+            activity?.runOnUiThread{
+                if(call.isSuccessful){
+                    showMessage("Sucursal Modificada")
+                    binding.etID.text = ""
+                    binding.etPoblacion.text.clear()
+                    binding.etProvincia.text.clear()
+                    binding.etReferencia.text.clear()
+                }else{
+                    showMessage("Error al Modificar")
+                }
+            }
+        }
+    }
+    fun eliminar(id:Int){
+        CoroutineScope(Dispatchers.IO).launch {
+            val call: Response<Void> = getRetrofit().create(APIServiceSucursal::class.java).deleteSucursal(id)
+            activity?.runOnUiThread{
+                if(call.isSuccessful){
+                    showMessage("Sucursal Eliminada")
+                    binding.etID.text = ""
+                    binding.etPoblacion.text.clear()
+                    binding.etProvincia.text.clear()
+                    binding.etReferencia.text.clear()
+                }else{
+                    showMessage("Error al Eliminar")
                 }
             }
         }

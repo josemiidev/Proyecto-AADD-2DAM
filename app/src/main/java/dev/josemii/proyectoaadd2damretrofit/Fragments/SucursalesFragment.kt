@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import dev.josemii.proyectoaadd2damretrofit.Clases.Sucursal
 import dev.josemii.proyectoaadd2damretrofit.Miscelanea.SucursalAdapter
+import dev.josemii.proyectoaadd2damretrofit.R
 import dev.josemii.proyectoaadd2damretrofit.UI.APIServiceSucursal
 import dev.josemii.proyectoaadd2damretrofit.databinding.FragmentSucursalesBinding
 import kotlinx.coroutines.CoroutineScope
@@ -45,6 +47,10 @@ class SucursalesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
         llamarAPI()
+
+        binding.btnNuevo.setOnClickListener {
+            findNavController().navigate(R.id.nav_sucursales_view)
+        }
     }
     private fun initRecyclerView(){
         adapter = SucursalAdapter(listaSucursales)
