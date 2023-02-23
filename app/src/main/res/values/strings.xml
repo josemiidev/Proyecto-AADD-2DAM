@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">Proyecto AADD 2DAM Retrofit</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="titulo_cliente">Clientes</string>
     <string name="titulo_sucursal">Sucursales</string>
     <string name="titulo_cuenta">Cuentas</string>
-
-
 </resources>
