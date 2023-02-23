@@ -25,4 +25,14 @@
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.Edicion.SucursalViewFragment"
         android:label="fragment_sucursal_view"
         tools:layout="@layout/fragment_sucursal_view" />
+    <fragment
+        android:id="@+id/nav_cliente_view"
+        android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.Edicion.ClienteViewFragment"
+        android:label="fragment_cliente_view"
+        tools:layout="@layout/fragment_cliente_view" />
+    <fragment
+        android:id="@+id/nav_cuenta_view"
+        android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.Edicion.CuentaViewFragment"
+        android:label="fragment_cuenta"
+        tools:layout="@layout/fragment_cuenta" />
 </navigation>
