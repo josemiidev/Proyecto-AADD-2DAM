@@ -7,6 +7,6 @@ data class Cliente(
     var dni : String,
     var nombre : String,
     var apellidos : String,
-    var fechaMacimiento : Date,
+    var fechaMacimiento : String,
     var sucursalByIdSucursal: Sucursal
 )

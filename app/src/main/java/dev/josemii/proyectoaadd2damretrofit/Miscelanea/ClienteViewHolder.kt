@@ -9,8 +9,9 @@ class ClienteViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private val binding = ItemClienteBinding.bind(view)
 
     fun render(cliente: Cliente){
-        binding.tvReferencia.text = sucursal.referencia
-        binding.tvPoblacion.text = sucursal.poblacion
-        binding.tvProvincia.text = sucursal.provincia
+        binding.tvNombre.text = cliente.nombre
+        binding.tvApellidos.text = cliente.apellidos
+        binding.tvDni.text = cliente.dni
+        binding.tvFNacimiento.text = cliente.fechaMacimiento
     }
 }
