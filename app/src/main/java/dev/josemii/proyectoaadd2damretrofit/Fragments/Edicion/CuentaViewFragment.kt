@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dev.josemii.proyectoaadd2damretrofit.R
+import dev.josemii.proyectoaadd2damretrofit.databinding.FragmentCuentaViewBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -14,11 +15,14 @@ import dev.josemii.proyectoaadd2damretrofit.R
  */
 class CuentaViewFragment : Fragment() {
 
+    private lateinit var binding : FragmentCuentaViewBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentCuentaViewBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cuenta_view, container, false)
+        return binding.root
     }
+
 }
