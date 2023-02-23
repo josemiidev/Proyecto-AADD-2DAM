@@ -1,8 +1,9 @@
 package dev.josemii.proyectoaadd2damretrofit.Miscelanea
 
+import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import dev.josemii.proyectoaadd2damretrofit.Clases.Sucursal
 import dev.josemii.proyectoaadd2damretrofit.R
@@ -16,14 +17,11 @@ class SucursalAdapter (val sucursales: List<Sucursal>) : RecyclerView.Adapter<Su
     override fun onBindViewHolder(holder: SucursalViewHolder, position: Int) {
         val item = sucursales[position]
         holder.render(item)
-        /*holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener{
             var bundle = Bundle()
-            bundle.putString("dni", item.dni)
-            bundle.putString("nombre", item.nombre)
-            bundle.putString("apellidos", item.apellidos)
-            bundle.putString("sexo", item.sexo)
-            it?.findNavController()?.navigate(R.id.nav_modificar, bundle)
-        }*/
+            bundle.putInt("id_sucursal", item.id)
+            it?.findNavController()?.navigate(R.id.nav_sucursales_view, bundle)
+        }
     }
 
     override fun getItemCount(): Int = sucursales.size

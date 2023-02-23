@@ -20,4 +20,9 @@
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.SucursalesFragment"
         android:label="fragment_sucursales"
         tools:layout="@layout/fragment_sucursales" />
+    <fragment
+        android:id="@+id/nav_sucursales_view"
+        android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.Edicion.SucursalViewFragment"
+        android:label="fragment_sucursal_view"
+        tools:layout="@layout/fragment_sucursal_view" />
 </navigation>
