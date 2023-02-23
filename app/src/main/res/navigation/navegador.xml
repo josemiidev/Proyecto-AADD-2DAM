@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegador"
+    app:startDestination="@id/nav_clientes">
+
+    <fragment
+        android:id="@+id/nav_clientes"
+        android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.ClientesFragment"
+        android:label="fragment_clientes"
+        tools:layout="@layout/fragment_clientes" />
+    <fragment
+        android:id="@+id/nav_cuentas"
+        android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.CuentasFragment"
+        android:label="fragment_cuentas"
+        tools:layout="@layout/fragment_cuentas" />
+    <fragment
+        android:id="@+id/nav_sucursales"
+        android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.SucursalesFragment"
+        android:label="fragment_sucursales"
+        tools:layout="@layout/fragment_sucursales" />
+</navigation>
