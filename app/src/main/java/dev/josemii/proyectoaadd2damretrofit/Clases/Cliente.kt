@@ -7,7 +7,7 @@ data class Cliente(
     var dni : String,
     var nombre : String,
     var apellidos : String,
-    var fechaMacimiento : String,
+    var fechaNacimiento : String,
     var sucursalByIdSucursal: Sucursal
 ){
     override fun toString(): String = "$dni - $nombre $apellidos"

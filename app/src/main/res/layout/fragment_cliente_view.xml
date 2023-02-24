@@ -102,21 +102,23 @@
         android:id="@+id/lyFecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/lyApellidos"
-        app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyApellidos">
+
         <TextView
             android:id="@+id/tvFecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha Nacimiento  :"/>
-        <EditText
-            android:id="@+id/etFechaNacimiento"
-            android:layout_width="200dp"
-            android:inputType="date"
-            android:layout_height="wrap_content"/>
+            android:text="Fecha Nacimiento  :" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="285dp"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <Spinner

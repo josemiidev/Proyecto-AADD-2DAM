@@ -12,6 +12,6 @@ class ClienteViewHolder(view: View): RecyclerView.ViewHolder(view) {
         binding.tvNombre.text = cliente.nombre
         binding.tvApellidos.text = cliente.apellidos
         binding.tvDni.text = cliente.dni
-        binding.tvFNacimiento.text = cliente.fechaMacimiento
+        binding.tvFNacimiento.text = cliente.fechaNacimiento
     }
 }
