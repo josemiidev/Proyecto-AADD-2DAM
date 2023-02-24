@@ -8,31 +8,31 @@
     <fragment
         android:id="@+id/nav_clientes"
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.ClientesFragment"
-        android:label="fragment_clientes"
+        android:label="Clientes"
         tools:layout="@layout/fragment_clientes" />
     <fragment
         android:id="@+id/nav_cuentas"
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.CuentasFragment"
-        android:label="fragment_cuentas"
+        android:label="Cuentas"
         tools:layout="@layout/fragment_cuentas" />
     <fragment
         android:id="@+id/nav_sucursales"
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.SucursalesFragment"
-        android:label="fragment_sucursales"
+        android:label="Sucursales"
         tools:layout="@layout/fragment_sucursales" />
     <fragment
         android:id="@+id/nav_sucursales_view"
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.Edicion.SucursalViewFragment"
-        android:label="fragment_sucursal_view"
+        android:label="CRUD Sucursal"
         tools:layout="@layout/fragment_sucursal_view" />
     <fragment
         android:id="@+id/nav_cliente_view"
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.Edicion.ClienteViewFragment"
-        android:label="fragment_cliente_view"
+        android:label="CRUD Cliente"
         tools:layout="@layout/fragment_cliente_view" />
     <fragment
         android:id="@+id/nav_cuenta_view"
         android:name="dev.josemii.proyectoaadd2damretrofit.Fragments.Edicion.CuentaViewFragment"
-        android:label="fragment_cuenta"
+        android:label="CRUD Cuenta"
         tools:layout="@layout/fragment_cuenta_view" />
 </navigation>
