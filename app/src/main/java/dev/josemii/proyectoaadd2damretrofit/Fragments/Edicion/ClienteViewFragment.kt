@@ -85,7 +85,7 @@ class ClienteViewFragment : Fragment() {
                 var id = Integer.parseInt(binding.etID.text.toString())
                 eliminar(id)
             } else {
-                findNavController()?.navigate(R.id.nav_sucursales)
+                findNavController()?.navigate(R.id.nav_clientes)
             }
         }
     }
@@ -170,7 +170,6 @@ class ClienteViewFragment : Fragment() {
                     binding.etNombre.text.clear()
                     binding.etApellidos.text.clear()
                 } else {
-                    println("::LOG::" + call.message())
                     showMessage("Error al Insertar")
                 }
             }

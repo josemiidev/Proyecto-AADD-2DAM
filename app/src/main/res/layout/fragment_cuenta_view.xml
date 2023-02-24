@@ -54,6 +54,7 @@
             android:text="CCC:"/>
         <EditText
             android:id="@+id/etCCC"
+            android:inputType="number"
             android:layout_width="200dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -74,6 +75,7 @@
             android:text="Saldo:"/>
         <EditText
             android:id="@+id/etSaldo"
+            android:inputType="numberDecimal"
             android:layout_width="200dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -96,7 +98,7 @@
 
 
     <Spinner
-        android:id="@+id/spSucursal"
+        android:id="@+id/spCliente"
         app:layout_constraintTop_toBottomOf="@id/lyenAlta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/spSucursal"
+        app:layout_constraintTop_toBottomOf="@id/spCliente"
         app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent">
